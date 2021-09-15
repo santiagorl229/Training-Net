@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,17 @@ namespace WebPruebaApplication2.Controllers
             }
             return autor;
         }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Autor>> Get(int id, [BindRequired] string param2)
+        {
+            var autor = await context.Autores.FirstOrDefaultAsync(x => x.Id == id);
+            if (autor==null){
+                return NotFound();
+            }
+            return autor;
+
+        }
+
         [HttpGet("listado")]
         public ActionResult<IEnumerable<Autor>>Get()
         {
@@ -47,6 +59,7 @@ namespace WebPruebaApplication2.Controllers
             //if(!ModelState.IsValid){
             //    return BadRequest(ModelState);
             //}
+            TryValidateModel(autor);
             context.Autores.Add(autor);
             context.SaveChanges();
             return new CreatedAtRouteResult("obtenerAutor", new { id = autor.Id }, autor);
