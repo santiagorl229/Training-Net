@@ -25,7 +25,8 @@ namespace WebPruebaApplication2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddResponseCaching();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationSheme).AddJwtBearer();
             services.AddDbContext<ApplicationDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
@@ -46,6 +47,7 @@ namespace WebPruebaApplication2
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            app.UseResponseCaching();
             app.UseStaticFiles();
 
             app.UseRouting();

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,11 @@ namespace WebPruebaApplication2.Controllers
     public class AutorController : ControllerBase
     {
         private readonly ApplicationDBContext context;
-        public AutorController(ApplicationDBContext context)
+        private readonly ILogger<AutorController> logger;
+        public AutorController(ApplicationDBContext context, ILogger<AutorController> logger  )
         {
             this.context = context;
+            this.logger = logger;
         }
 
         [HttpGet("{id}", Name = "obtenerAutor")]
@@ -35,6 +38,7 @@ namespace WebPruebaApplication2.Controllers
         {
             var autor = await context.Autores.FirstOrDefaultAsync(x => x.Id == id);
             if (autor==null){
+                logger.LogWarning($"El autor de Id{id} no ha sido encontrado");
                 return NotFound();
             }
             return autor;
@@ -44,6 +48,7 @@ namespace WebPruebaApplication2.Controllers
         [HttpGet("listado")]
         public ActionResult<IEnumerable<Autor>>Get()
         {
+            logger.LogInformation("Obteniendo los autores");
             return context.Autores.ToList();
         }
 
@@ -81,6 +86,7 @@ namespace WebPruebaApplication2.Controllers
             var autor = context.Autores.FirstOrDefault(x => x.Id == id);
             if (autor == null)
             {
+
                 return NotFound();
             }
             context.Autores.Remove(autor);
