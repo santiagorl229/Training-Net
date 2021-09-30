@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xhago\\OneDrive\\Escritorio\\Sistecredito\\Test-Knowlenge\\Training-Net\\WebPruebaApplication2\\WebPruebaApplication2.csproj": {}
+    "D:\\Training-Net\\WebPruebaApplication2\\WebPruebaApplication2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xhago\\OneDrive\\Escritorio\\Sistecredito\\Test-Knowlenge\\Training-Net\\WebPruebaApplication2\\WebPruebaApplication2.csproj": {
+    "D:\\Training-Net\\WebPruebaApplication2\\WebPruebaApplication2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xhago\\OneDrive\\Escritorio\\Sistecredito\\Test-Knowlenge\\Training-Net\\WebPruebaApplication2\\WebPruebaApplication2.csproj",
+        "projectUniqueName": "D:\\Training-Net\\WebPruebaApplication2\\WebPruebaApplication2.csproj",
         "projectName": "WebPruebaApplication2",
-        "projectPath": "C:\\Users\\xhago\\OneDrive\\Escritorio\\Sistecredito\\Test-Knowlenge\\Training-Net\\WebPruebaApplication2\\WebPruebaApplication2.csproj",
-        "packagesPath": "C:\\Users\\xhago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xhago\\OneDrive\\Escritorio\\Sistecredito\\Test-Knowlenge\\Training-Net\\WebPruebaApplication2\\obj\\",
+        "projectPath": "D:\\Training-Net\\WebPruebaApplication2\\WebPruebaApplication2.csproj",
+        "packagesPath": "C:\\Users\\srodriguezl\\.nuget\\packages\\",
+        "outputPath": "D:\\Training-Net\\WebPruebaApplication2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\xhago\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\srodriguezl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

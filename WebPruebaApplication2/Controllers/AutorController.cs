@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebPruebaApplication2.Context;
 using WebPruebaApplication2.Entities;
+using WebPruebaApplication2.Helpers;
 
 namespace WebPruebaApplication2.Controllers
 {
@@ -46,6 +47,7 @@ namespace WebPruebaApplication2.Controllers
         }
 
         [HttpGet("listado")]
+        [ServiceFilter(typeof(MiFiltroDeAccion))]
         public ActionResult<IEnumerable<Autor>>Get()
         {
             logger.LogInformation("Obteniendo los autores");
